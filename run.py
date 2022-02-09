@@ -30,7 +30,31 @@ def get_user_steps():
 
     user_steps = input("Enter your daily steps here: \n")
 
-    print(f"You have entered: {user_steps}")
+    user_steps_converted = user_steps.split(",")
 
+    validate_user_entry(user_steps_converted)
+    
+
+
+
+
+def validate_user_entry(data):
+    """
+    Check if exaclty 7 numbers entered
+    check if all 7 numbers are valid numbers
+    """
+    try:
+        if len(data) != 7:
+            raise ValueError(
+                f"Exaclty 7 numbers expeced, you have entered {len(data)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data entered: {e}, read the instructions and try again! \n")
+        get_user_steps()
+        
 
 get_user_steps()
+
+
+# 1,22,33,55,55,66,99 
+# python3 run.py
