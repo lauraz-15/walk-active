@@ -66,7 +66,6 @@ def calculations(weekly_steps_converted):
     """
     print("Please wait while the data is beeing processed")
     data_steps_worksheet = SHEET.worksheet("steps").get_all_values()
-    print(data_steps_worksheet)
     weeks = len(data_steps_worksheet) - 1
     print(f"There are {weeks} weeks of data on the spreadhseet")
 
@@ -75,6 +74,13 @@ def calculations(weekly_steps_converted):
 
     print(f"This is the previous week: {converted_prev_week}")
     print(f"This is current past week: {weekly_steps_converted}")
+
+    sum_prev_week = sum(converted_prev_week)
+    sum_this_week = sum(weekly_steps_converted)
+
+   
+    print(f"The total steps for the previous week is: {sum_prev_week}")
+    print(f"The total steps for the this week is: {sum_this_week}")
 
     if weeks <= 1:
         print("This is the first time you are entering numbers on this calculator")
