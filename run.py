@@ -65,10 +65,13 @@ def calculations(database_data):
     Compare the numbers with the prevous week
     """
     print("Please wait while the data is beeing processed")
-    existing_data_sheet = SHEET.worksheet("steps").get_all_values()
-    print(existing_data_sheet)
-    weeks = len(existing_data_sheet) - 1
+    data_steps_worksheet = SHEET.worksheet("steps").get_all_values()
+    print(data_steps_worksheet)
+    weeks = len(data_steps_worksheet) - 1
     print(f"There are {weeks} weeks of data on the spreadhseet")
+
+    previous_week = data_steps_worksheet[-2]
+    print(previous_week)
 
     if weeks <= 1:
         print("This is the first time you are entering numbers on this calculator")
