@@ -67,6 +67,14 @@ def calculations(database_data):
     print("Please wait while the data is beeing processed")
     existing_data_sheet = SHEET.worksheet("steps").get_all_values()
     print(existing_data_sheet)
+    weeks = len(existing_data_sheet) - 1
+    print(f"There are {weeks} weeks of data on the spreadhseet")
+
+    if weeks <= 1:
+        print("This is the first time you are entering numbers on this calculator")
+    else:
+        print("There is historic data we can compare this with")
+
 
 
 def update_steps_worksheet(values):
