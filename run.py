@@ -23,6 +23,7 @@ def get_user_steps():
     """
     Get daily steps from the user for the past 7 days
     """
+   
     print("Please enter the daily step count for the past 7 days\n")
     print("The numbers must be entered in the the following format")
     print("7 numbers seperated by commas")
@@ -32,29 +33,31 @@ def get_user_steps():
 
     user_steps_converted = user_steps.split(",")
 
-    validate_user_entry(user_steps_converted)
-    
+    if validate_user_entry(user_steps_converted):
+            print("You have entered information in the correct format!")
+    return user_steps_converted
 
-
-
-
-def validate_user_entry(data):
+def validate_user_entry(values):
     """
     Check if exaclty 7 numbers entered
     check if all 7 numbers are valid numbers
     """
     try:
-        if len(data) != 7:
-            raise ValueError(
-                f"Exaclty 7 numbers expeced, you have entered {len(data)}"
-            )
+        [int(value) for value in values]
+        if len(values) != 7:
+            raise ValueError(f"Exactly 7 numbers expected, you have entered: {len(values)}")
     except ValueError as e:
-        print(f"Invalid data entered: {e}, read the instructions and try again! \n")
+        print(f"\nInvalid data entered: {e}, read the instructions and try again! \n")
         get_user_steps()
-        
+        return False
+
+    return True   
 
 get_user_steps()
 
 
-# 1,22,33,55,55,66,99 
+# 1,22,33,55,55,66,99
+
 # python3 run.py
+
+weekly_steps = get_user_steps()
