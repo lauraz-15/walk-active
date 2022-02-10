@@ -56,6 +56,18 @@ def validate_user_entry(values):
 
     return True   
 
+def calculations(database_data):
+    """
+    Check if there is weekly steps entered for the prevous weeks
+    Get the data from the previous weeks
+    Calculate total steps that week
+    Calculate how many calories burned
+    Compare the numbers with the prevous week
+    """
+    print("Please wait while the data is beeing processed")
+    existing_data_sheet = SHEET.worksheet("steps").get_all_values()
+    print(existing_data_sheet)
+
 
 def update_steps_worksheet(values):
     """
@@ -72,6 +84,13 @@ def update_steps_worksheet(values):
 
 # python3 run.py
 
-weekly_steps = get_user_steps()
-weekly_steps_converted = [int(step) for step in weekly_steps]
-update_steps_worksheet(weekly_steps_converted)
+def main():
+    """
+    Run all main functions
+    """
+    weekly_steps = get_user_steps()
+    weekly_steps_converted = [int(step) for step in weekly_steps]
+    update_steps_worksheet(weekly_steps_converted)
+    calculations(weekly_steps_converted)
+
+main()
