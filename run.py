@@ -56,7 +56,7 @@ def validate_user_entry(values):
 
     return True   
 
-def calculations(database_data):
+def calculations(weekly_steps_converted):
     """
     Check if there is weekly steps entered for the prevous weeks
     Get the data from the previous weeks
@@ -71,7 +71,10 @@ def calculations(database_data):
     print(f"There are {weeks} weeks of data on the spreadhseet")
 
     previous_week = data_steps_worksheet[-2]
-    print(previous_week)
+    converted_prev_week = [int(string) for string in previous_week]
+
+    print(f"This is the previous week: {converted_prev_week}")
+    print(f"This is current past week: {weekly_steps_converted}")
 
     if weeks <= 1:
         print("This is the first time you are entering numbers on this calculator")
