@@ -85,8 +85,24 @@ def calculations(weekly_steps_converted):
         else: 
             more_or_less = "more"
         print(f"This is {difference} {more_or_less} than the previous week")
+    return sum_this_week
  
- 
+
+def calulate_calories(this_week):
+    """
+    Find from the user if they want to find out
+    total calories burned based on their stats
+    Calculate total calories burned
+    """
+    print(f"We have successfully imported stats: this week: {this_week}")
+    user_choice = input("Would you like to find out how many calories that is based on your stats?")
+    if user_choice == "yes":
+        height = input("Enter your height in meteres(e.g: 1.76\n")
+        weight = input("Enter your weight in kg\n")
+        # print(f"You have entered Height: {height} & weight: {weight} \n Thank you!")
+    elif user_choice == "no":
+        print ("On avarage that woudl mean you have burned xx many calories")
+
 def update_steps_worksheet(values):
     """
     Add weekly steps values to the google worksheet
@@ -108,7 +124,8 @@ def main():
     weekly_steps = get_user_steps()
     weekly_steps_converted = [int(step) for step in weekly_steps]
     update_steps_worksheet(weekly_steps_converted)
-    calculations(weekly_steps_converted)
+    current_weeks_steps = calculations(weekly_steps_converted)
+    calulate_calories(current_weeks_steps)
 
 
 main()
