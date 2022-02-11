@@ -19,6 +19,7 @@ sales = SHEET.worksheet('steps')
 
 # print(data)
 
+
 def get_user_steps():
     """
     Get daily steps from the user for the past 7 days
@@ -35,8 +36,7 @@ def get_user_steps():
 
         if validate_user_entry(user_steps_converted):
             print("You have entered information in the correct format!")
-            break
-        
+            break     
     return user_steps_converted
 
 
@@ -48,13 +48,14 @@ def validate_user_entry(values):
     try:
         [int(value) for value in values]
         if len(values) != 7:
-            raise ValueError(f"Exactly 7 numbers expected, you have entered: {len(values)}")
+            raise ValueError(f"You have entered: {len(values)}\n"")
     except ValueError as e:
-        print(f"\nInvalid data entered: {e}, read the instructions and try again! \n")
+        print(f"\nInvalid data entered: {e}")
+        print("Read the instructions and try again! \n")
         get_user_steps()
         return False
-
     return True   
+
 
 def calculations(weekly_steps_converted):
     """
@@ -77,16 +78,13 @@ def calculations(weekly_steps_converted):
 
     sum_prev_week = sum(converted_prev_week)
     sum_this_week = sum(weekly_steps_converted)
-
-   
     print(f"The total steps for the previous week is: {sum_prev_week}")
     print(f"The total steps for the this week is: {sum_this_week}")
 
     if weeks <= 1:
-        print("This is the first time you are entering numbers on this calculator")
+        print("Only one week of data available")
     else:
         print("There is historic data we can compare this with")
-
 
 
 def update_steps_worksheet(values):
@@ -112,5 +110,6 @@ def main():
     weekly_steps_converted = [int(step) for step in weekly_steps]
     update_steps_worksheet(weekly_steps_converted)
     calculations(weekly_steps_converted)
+
 
 main()
