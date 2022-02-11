@@ -48,7 +48,7 @@ def validate_user_entry(values):
     try:
         [int(value) for value in values]
         if len(values) != 7:
-            raise ValueError(f"You have entered: {len(values)}\n"")
+            raise ValueError(f"You have entered: {len(values)}\n")
     except ValueError as e:
         print(f"\nInvalid data entered: {e}")
         print("Read the instructions and try again! \n")
@@ -68,31 +68,30 @@ def calculations(weekly_steps_converted):
     print("Please wait while the data is beeing processed")
     data_steps_worksheet = SHEET.worksheet("steps").get_all_values()
     weeks = len(data_steps_worksheet) - 1
-    print(f"There are {weeks} weeks of data on the spreadhseet")
-
-    previous_week = data_steps_worksheet[-2]
-    converted_prev_week = [int(string) for string in previous_week]
-
-    print(f"This is the previous week: {converted_prev_week}")
-    print(f"This is current past week: {weekly_steps_converted}")
-
-    sum_prev_week = sum(converted_prev_week)
+    print(f"There are {weeks} weeks of data on the spreadhseet\n")
     sum_this_week = sum(weekly_steps_converted)
-    print(f"The total steps for the previous week is: {sum_prev_week}")
-    print(f"The total steps for the this week is: {sum_this_week}")
+    print(f"You have walked total of {sum_this_week} steps this week")
 
     if weeks <= 1:
         print("Only one week of data available")
+        print("Come back next week to compare the results")
     else:
-        print("There is historic data we can compare this with")
-
-
+        previous_week = data_steps_worksheet[-2]
+        converted_prev_week = [int(string) for string in previous_week]
+        sum_prev_week = sum(converted_prev_week)
+        difference = sum_this_week - sum_prev_week
+        if difference < 0:
+            more_or_less = "less"
+        else: 
+            more_or_less = "more"
+        print(f"This is {difference} {more_or_less} than the previous week")
+ 
+ 
 def update_steps_worksheet(values):
     """
     Add weekly steps values to the google worksheet
     Add new row for each week
     """
-    print("Updating weekly steps to the database...\n")
     steps_worksheet = SHEET.worksheet("steps")
     steps_worksheet.append_row(values)
     print("Database updated successfully.\n")
