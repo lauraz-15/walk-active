@@ -105,12 +105,17 @@ def get_user_stats():
             height = input("Enter your height in cm(e.g: 176)\n")
             if validate_height_weight(height):
                 break
-        print("You have enetered valid number for your height")
+            print("You have enetered valid number for your height")
         while True:
-            weight = input("Enter your weight in kg, without decimal point\n")
+            weight = input("Enter your weight in kg, without a decimal point\n")
             if validate_height_weight(weight):
                 break
-        print("You have enetered valid number for your weight\n")
+            print("You have enetered valid number for your weight\n")
+        while True:
+            age = input("Enter your age\n")
+            if validate_height_weight(weight):
+                break
+            print("You have enetered valid number for your weight\n")
     elif user_choice == "no":
         print ("On avarage that woudl mean you have burned xx many calories")
     else: 
