@@ -35,7 +35,6 @@ def get_user_steps():
         user_steps_converted = user_steps.split(",")
 
         if validate_user_entry(user_steps_converted):
-            print("You have entered information in the correct format!")
             break     
     return user_steps_converted
 
@@ -65,7 +64,6 @@ def calculations(weekly_steps_converted):
     Calculate how many calories burned
     Compare the numbers with the prevous week
     """
-    print("Please wait while the data is beeing processed")
     data_steps_worksheet = SHEET.worksheet("steps").get_all_values()
     weeks = len(data_steps_worksheet) - 1
     print(f"There are {weeks} weeks of data on the spreadhseet\n")
@@ -105,17 +103,14 @@ def get_user_stats():
             height = input("Enter your height in cm(e.g: 176):\n")
             if validate_height_weight(height):
                 break
-            print("You have enetered valid number for your height")
         while True:
             weight = input("Enter your weight in kg, without a decimal point:\n")
             if validate_height_weight(weight):
                 break
-            print("You have enetered valid number for your weight\n")
         while True:
             age = input("Enter your age\n")
             if validate_height_weight(weight):
                 break
-            print("You have enetered valid number for your weight\n")
         while True:
             gender = input("Please neter 'm'for a man or 'w'if you are a woman: \n")
             if gender == "m" or gender == "w":
@@ -137,7 +132,7 @@ def validate_height_weight(string):
     try:
         number = int(string)
         if number > 0:
-            print("that's a good number. Well done!")
+            print("Thank you")
         else:
             print("that's not a positive number. Try again: ")
             return False
@@ -151,7 +146,6 @@ def calculate_bmr(height, weight, age, gender):
     Calculate the BMR using different formula 
     depending on the gender
     """
-    print(f"function is connected, your gender is: {gender}, weight: {weight}")
     if gender == "m":
         bmr = 88.362 + (13.397 * int(weight)) + (4.799 * int(height)) - (5.677 * int(age))
     elif gender == "w":
@@ -177,10 +171,13 @@ def main():
     """
     Run all main functions
     """
-    # weekly_steps = get_user_steps()
-    # weekly_steps_converted = [int(step) for step in weekly_steps]
-    # update_steps_worksheet(weekly_steps_converted)
-    # current_weeks_steps = calculations(weekly_steps_converted)
+    weekly_steps = get_user_steps()
+    weekly_steps_converted = [int(step) for step in weekly_steps]
+    update_steps_worksheet(weekly_steps_converted)
+    current_weeks_steps = calculations(weekly_steps_converted)
     get_user_stats()
 
+print("Welcome to WalkActive, here you can enter last 7 days of your daily steps")
+print("Enter data every week, and see how you improve every week\n")
+print("Once you enter your steps, you will also have an option to find out your BMR\n")
 main()
