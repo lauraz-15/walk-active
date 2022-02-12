@@ -88,14 +88,18 @@ def calculations(weekly_steps_converted):
     return sum_this_week
 
 
-def calulate_calories(this_week):
+def get_user_stats():
     """
     Find from the user if they want to find out
-    total calories burned based on their stats
-    Calculate total calories burned
+    total calorie requirments based on their stats.
+    Get data from the use user.
     """
-    print(f"We have successfully imported stats: this week: {this_week}")
-    user_choice = input("Would you like to find out how many calories that is based on your stats?")
+    print("Would you like to find out your BMR?\n")
+    print("Your Basal Metabolic Rate (BMR) is the number of calories ")
+    print("you burn as your body performs basic (basal) life-sustaining function.")
+    print("Commonly also termed as Resting Metabolic Rate (RMR), ")
+    print("which is the calories burned if you stayed in bed all day.\n")
+    user_choice = input("Please type 'yes' or 'no': ")
     if user_choice == "yes":
         while True:
             height = input("Enter your height in cm(e.g: 176)\n")
@@ -107,12 +111,11 @@ def calulate_calories(this_week):
             if validate_height_weight(weight):
                 break
         print("You have enetered valid number for your weight\n")
-        print(f"You have entered Height: {height} & weight: {weight} \n Thank you!")
     elif user_choice == "no":
         print ("On avarage that woudl mean you have burned xx many calories")
     else: 
         print("Please answer with a 'yes'or 'no'")
-        user_choice = input("Would you like to find out how many calories that is based on your stats?")
+        user_choice = input("Please type 'yes' or 'no': ")
 
 
 def validate_height_weight(string):
@@ -153,10 +156,10 @@ def main():
     """
     Run all main functions
     """
-    weekly_steps = get_user_steps()
-    weekly_steps_converted = [int(step) for step in weekly_steps]
-    update_steps_worksheet(weekly_steps_converted)
-    current_weeks_steps = calculations(weekly_steps_converted)
-    calulate_calories(current_weeks_steps)
+    # weekly_steps = get_user_steps()
+    # weekly_steps_converted = [int(step) for step in weekly_steps]
+    # update_steps_worksheet(weekly_steps_converted)
+    # current_weeks_steps = calculations(weekly_steps_converted)
+    get_user_stats()
 
 main()
