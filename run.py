@@ -102,12 +102,12 @@ def get_user_stats():
     user_choice = input("Please type 'yes' or 'no': ")
     if user_choice == "yes":
         while True:
-            height = input("Enter your height in cm(e.g: 176)\n")
+            height = input("Enter your height in cm(e.g: 176):\n")
             if validate_height_weight(height):
                 break
             print("You have enetered valid number for your height")
         while True:
-            weight = input("Enter your weight in kg, without a decimal point\n")
+            weight = input("Enter your weight in kg, without a decimal point:\n")
             if validate_height_weight(weight):
                 break
             print("You have enetered valid number for your weight\n")
@@ -116,10 +116,17 @@ def get_user_stats():
             if validate_height_weight(weight):
                 break
             print("You have enetered valid number for your weight\n")
+        while True:
+            gender = input("Please neter 'm'for a man or 'w'if you are a woman: \n")
+            if gender == "m" or gender == "w":
+                print("Thank you, data entered correctly!\n")
+                break
+            else:
+                gender = input("Please neter 'm'for a man or 'w'if you are a woman: \n")
+        calculate_bmr(height, weight, age, gender)   
     elif user_choice == "no":
-        print ("On avarage that woudl mean you have burned xx many calories")
+        print ("No, problem. You can exit the WalkActive by pressing xx")
     else: 
-        print("Please answer with a 'yes'or 'no'")
         user_choice = input("Please type 'yes' or 'no': ")
 
 
@@ -139,6 +146,18 @@ def validate_height_weight(string):
         return False
     return True
 
+def calculate_bmr(height, weight, age, gender):
+    """
+    Calculate the BMR using different formula 
+    depending on the gender
+    """
+    print(f"function is connected, your gender is: {gender}, weight: {weight}")
+    if gender == "m":
+        bmr = 88.362 + (13.397 * int(weight)) + (4.799 * int(height)) - (5.677 * int(age))
+    elif gender == "w":
+        bmr = 447.593 + (9.247 * int(weight)) + (3.098 * int(height)) - (4.330 * int(age))
+    print(f"\nYour BMR is: {bmr} per day.\n")
+
 
 def update_steps_worksheet(values):
     """
@@ -148,9 +167,6 @@ def update_steps_worksheet(values):
     steps_worksheet = SHEET.worksheet("steps")
     steps_worksheet.append_row(values)
     print("Database updated successfully.\n")
-
-
-
 
 #       1,22,33,55,55,66,99
 #       800,900,800,600,800,700,52
