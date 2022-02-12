@@ -86,7 +86,7 @@ def calculations(weekly_steps_converted):
             more_or_less = "more"
         print(f"This is {difference} {more_or_less} than the previous week")
     return sum_this_week
- 
+
 
 def calulate_calories(this_week):
     """
@@ -97,11 +97,37 @@ def calulate_calories(this_week):
     print(f"We have successfully imported stats: this week: {this_week}")
     user_choice = input("Would you like to find out how many calories that is based on your stats?")
     if user_choice == "yes":
-        height = input("Enter your height in meteres(e.g: 1.76\n")
+        while True:
+            height = input("Enter your height in cm(e.g: 176)\n")
+            if validate_height_weight(height):
+                break
+        print("You have enetered valid number for your height")
         weight = input("Enter your weight in kg\n")
-        # print(f"You have entered Height: {height} & weight: {weight} \n Thank you!")
+        print(f"You have entered Height: {height} & weight: {weight} \n Thank you!")
     elif user_choice == "no":
         print ("On avarage that woudl mean you have burned xx many calories")
+    else: 
+        print("Please answer with a 'yes'or 'no'")
+        user_choice = input("Would you like to find out how many calories that is based on your stats?")
+
+
+def validate_height_weight(string):
+    """
+    Validate if the data entered is a positive number
+    """
+    try:
+        number = int(string)
+        if number > 0:
+            goodinput = True
+            print("that's a good number. Well done!")
+        else:
+            print("that's not a positive number. Try again: ")
+            return False
+    except ValueError:
+        print("This is not a number, try again: ")
+        return False
+    return True
+
 
 def update_steps_worksheet(values):
     """
@@ -113,9 +139,12 @@ def update_steps_worksheet(values):
     print("Database updated successfully.\n")
 
 
-# 1,22,33,55,55,66,99
 
-# python3 run.py
+
+#       1,22,33,55,55,66,99
+#       800,900,800,600,800,700,52
+
+#       python3 run.py
 
 def main():
     """
@@ -126,6 +155,5 @@ def main():
     update_steps_worksheet(weekly_steps_converted)
     current_weeks_steps = calculations(weekly_steps_converted)
     calulate_calories(current_weeks_steps)
-
 
 main()
