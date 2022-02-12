@@ -102,7 +102,11 @@ def calulate_calories(this_week):
             if validate_height_weight(height):
                 break
         print("You have enetered valid number for your height")
-        weight = input("Enter your weight in kg\n")
+        while True:
+            weight = input("Enter your weight in kg, without decimal point\n")
+            if validate_height_weight(weight):
+                break
+        print("You have enetered valid number for your weight\n")
         print(f"You have entered Height: {height} & weight: {weight} \n Thank you!")
     elif user_choice == "no":
         print ("On avarage that woudl mean you have burned xx many calories")
@@ -118,13 +122,12 @@ def validate_height_weight(string):
     try:
         number = int(string)
         if number > 0:
-            goodinput = True
             print("that's a good number. Well done!")
         else:
             print("that's not a positive number. Try again: ")
             return False
     except ValueError:
-        print("This is not a number, try again: ")
+        print("This is not a valid number, try again: ")
         return False
     return True
 
