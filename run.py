@@ -35,7 +35,7 @@ def get_user_steps():
         user_steps_converted = user_steps.split(",")
 
         if validate_user_entry(user_steps_converted):
-            break     
+            break    
     return user_steps_converted
 
 
@@ -53,7 +53,7 @@ def validate_user_entry(values):
         print("Read the instructions and try again! \n")
         get_user_steps()
         return False
-    return True   
+    return True
 
 
 def calculations(weekly_steps_converted):
@@ -80,9 +80,9 @@ def calculations(weekly_steps_converted):
         difference = sum_this_week - sum_prev_week
         if difference < 0:
             more_or_less = "less"
-        else: 
+        else:
             more_or_less = "more"
-        print(f"This is {difference} {more_or_less} than the previous week")
+        print(f"This is {difference} {more_or_less} than the previous week\n")
     return sum_this_week
 
 
@@ -93,18 +93,19 @@ def get_user_stats():
     Get data from the use user.
     """
     print("Would you like to find out your BMR?\n")
-    print("Your Basal Metabolic Rate (BMR) is the number of calories ")
-    print("you burn as your body performs basic (basal) life-sustaining function.")
+    print("Your Basal Metabolic Rate (BMR) is the number of calories you")
+    print("burn as your body performs basic (basal) life-sustaining function.")
     print("Commonly also termed as Resting Metabolic Rate (RMR), ")
     print("which is the calories burned if you stayed in bed all day.\n")
-    user_choice = input("Please type 'yes' or 'no': ")
+    user_choice = input("Please type 'yes' or 'no': ").lower()
     if user_choice == "yes":
         while True:
             height = input("Enter your height in cm(e.g: 176):\n")
             if validate_height_weight(height):
                 break
         while True:
-            weight = input("Enter your weight in kg, without a decimal point:\n")
+            print("Please neter your weight in kg,")
+            weight = input("without a decimal point:\n")
             if validate_height_weight(weight):
                 break
         while True:
@@ -112,7 +113,8 @@ def get_user_stats():
             if validate_height_weight(weight):
                 break
         while True:
-            gender = input("Please neter 'm'for a man or 'w'if you are a woman: \n")
+            print("Please neter 'm'for a man,")
+            gender = input("or 'w' if you are a woman: \n")
             if gender == "m" or gender == "w":
                 print("Thank you, data entered correctly!\n")
                 break
@@ -150,7 +152,7 @@ def calculate_bmr(height, weight, age, gender):
         bmr = 88.362 + (13.397 * int(weight)) + (4.799 * int(height)) - (5.677 * int(age))
     elif gender == "w":
         bmr = 447.593 + (9.247 * int(weight)) + (3.098 * int(height)) - (4.330 * int(age))
-    print(f"\nYour BMR is: {bmr} per day.\n")
+    print(f"\nYour BMR is: {int(bmr)} per day.\n")
 
 
 def update_steps_worksheet(values):
@@ -177,9 +179,12 @@ def main():
     current_weeks_steps = calculations(weekly_steps_converted)
     get_user_stats()
 
-print("-------------------------------------------------------------------------")
-print("Welcome to WalkActive, here you can enter last 7 days of your daily steps")
-print("Enter data every week, and see how you improve every week.")
-print("Once you enter your steps, you will also have an option to find out your BMR\n")
-print("-------------------------------------------------------------------------")
+print("---------------------------------------------------------")
+print("Welcome to WalkActive!")
+print("This tool is designed to keep aacountable,")
+print("provide feedback of your weekly activity levels")
+print("and motivate you to move more")
+print("Enter data every week, and see how you improve each week.")
+print("There will also be an option to find out your BMR\n")
+print("----------------------------------------------------------")
 main()

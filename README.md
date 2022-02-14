@@ -32,7 +32,9 @@ The results are then presented to the user, which should encourage the user to g
 After the results are presented to the user, there is an option for a user to find out their BMR(Basal Metabolic rate (total number of calories that body needs to perform basic, life-sustaining functions. The result is based on users individual stats, so as the weight changes, metabolic rate would also change therefore user can recalculate the BMR each week(assuming there are weight changes.)
 This feature would motivate the user to monitor their daily calotie intake and add extra steps if extra calories were consumed. 
 
+### Bugs
 
+There was a bug with user imput when capital letters were used. There loop worked  prompting the user to enter the answer again, but one the an
 ### Validator Testing
 
 Code was passed through PEP8 Python Validator - no errors found.
