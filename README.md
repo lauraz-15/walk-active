@@ -1,31 +1,66 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome lauraz-15,
+## WalkActive
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+WalkActive is a Python terminal programme, that is designed to perform calculation in order to motivate user to be more active. 
 
-## Reminders
+There is also an option to calculate BMR - daily calories needs based on individuals weight, height, age and gender. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+programme is deployed on Heroku which allows the programme to be accessible to anyone. 
 
-## Creating the Heroku app
+Please Click [here](https://walk-active.herokuapp.com/) to access this project.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### How to use it?
 
-1. `heroku/python`
-2. `heroku/nodejs`
+When the program is launched user is introduced what the programme does. 
+Then user must enter the date of the last 7days of daily steps. 
+The data can be taken from any step counter app, most mobile phone will have this feature built in which allows mist users to use the programme straight away without any preparation/data collection. 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Features
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
+Once the data is entered in the correct format, data is uploaded to the Google sheets.
+This lets the user the save weeks worth of date and compare the results with the previous weeks. 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+If only one weeks of data will be provided, then total steps will be calculated for that week. The total steps are calculated for that week. This encourages the user to understand the activity level and motivates to achieve more the following week.
 
------
-Happy coding!
+Extensive calculations are done if there is date available for the previous weeks. 
+Such as the the difference of total weekly steps comparing to the previous week, which should encourage the user to get more active is the result is negative number or get even more steps if there is any improvement.
+
+The results are then presented to the user, which should encourage the user to get more steps in the following week.
+
+After the results are presented to the user, there is an option for a user to find out their BMR(Basal Metabolic rate (total number of calories that body needs to perform basic, life-sustaining functions. The result is based on users individual stats, so as the weight changes, metabolic rate would also change therefore user can recalculate the BMR each week(assuming there are weight changes.)
+This feature would motivate the user to monitor their daily calotie intake and add extra steps if extra calories were consumed. 
+
+
+### Validator Testing
+
+Code was passed through PEP8 Python Validator - no errors found.
+
+### Technologies
+
+Project was created using Python Essentials template from Code Institute on Github:
+[here](https://github.com/Code-Institute-Org/python-essentials-template) 
+
+Project was built using Gitpod
+
+**Python** was used as a programming language
+The deployed using **Heroku**.
+[**Google Drive**](https://drive.google.com/) and [**Google sheets API**](https://developers.google.com/sheets/api) was used to provide database feature.
+
+### Deployment
+
+1. Create list of requirements by entering this command in the terminal: 
+*pip3 freeze > requirements.txt*
+2. Sign up to Heroku account
+3. Click “add new app”
+4. Go to “settings”
+5. Click “Reveal Config Vars”
+5. Add 2 keys with values as below:
+	-Key: CREDS Value: (copy whole creds.json file)
+	-Key: PORT, Value: 8000
+6. Add build-packs: Python and node.js
+7. Then go to Delpoy and select github
+8. Search for GitHub repository and connect
+9. Wait until project is deployed and click “View” when button shows up.pip3 freeze > requirements.txt 
+10. Wait until project is deployed and click “View” when button shows up.
