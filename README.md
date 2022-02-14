@@ -9,6 +9,8 @@ Programme is deployed on Heroku which allows the programme to be accessible to a
 
 Please Click [here](https://walk-active.herokuapp.com/) to access this project.
 
+![Mock-up](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/mock-up.png)
+
 ### How to use it?
 
 When the program is launched user is introduced what the programme does. 
@@ -44,12 +46,14 @@ Code was passed through PEP8 Python Validator - no errors found.
 Project was created using Python Essentials template from Code Institute on Github:
 [here](https://github.com/Code-Institute-Org/python-essentials-template) 
 
-Project was built using Gitpod
+Project was built using **Gitpod**
 
 **Python** was used as a programming language
 The deployed using **Heroku**.
 [**Google Drive**](https://drive.google.com/) and [**Google sheets API**](https://developers.google.com/sheets/api) 
 was connected, so data can be collected and stored on Google spreadhseet.
+
+The BMR fromulas were taken from [Diabetetes.co.uk)https://www.diabetes.co.uk/bmr-calculator.html
 
 ### Deployment
 

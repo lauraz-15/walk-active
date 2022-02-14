@@ -15,11 +15,6 @@ SHEET = GSPREAD_CLIENT.open('WalkActive')
 
 sales = SHEET.worksheet('steps')
 
-# data = sales.get_all_values()
-
-# print(data)
-
-
 def get_user_steps():
     """
     Get daily steps from the user for the past 7 days
@@ -65,10 +60,13 @@ def calculations(weekly_steps_converted):
     Compare the numbers with the prevous week
     """
     data_steps_worksheet = SHEET.worksheet("steps").get_all_values()
+    print(data_steps_worksheet)
     weeks = len(data_steps_worksheet) - 1
-    print(f"There are {weeks} weeks of data on the spreadhseet\n")
+
     sum_this_week = sum(weekly_steps_converted)
+    avarage_this_week = int(sum_this_week / 7)
     print(f"You have walked total of {sum_this_week} steps this week")
+    print(f"Your avarage daily steps this week is: {avarage_this_week}")
 
     if weeks <= 1:
         print("Only one week of data available")
@@ -123,7 +121,7 @@ def get_user_stats():
                 gender = input("or 'w'if you are a woman: \n")
         calculate_bmr(height, weight, age, gender)   
     elif user_choice == "no":
-        print ("No, problem. You can exit the WalkActive by pressing xx")
+        print ("No, problem. Please return next week with more step data.")
     else: 
         user_choice = input("Please type 'yes' or 'no': ")
 
@@ -182,10 +180,11 @@ def main():
 
 print("---------------------------------------------------------")
 print("Welcome to WalkActive!")
-print("This tool is designed to keep aacountable,")
+print("This tool is designed to keep you aacountable,")
 print("provide feedback of your weekly activity levels")
 print("and motivate you to move more")
 print("Enter data every week, and see how you improve each week.")
 print("There will also be an option to find out your BMR\n")
 print("----------------------------------------------------------")
 main()
+
