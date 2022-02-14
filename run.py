@@ -60,13 +60,13 @@ def calculations(weekly_steps_converted):
     Compare the numbers with the prevous week
     """
     data_steps_worksheet = SHEET.worksheet("steps").get_all_values()
-    print(data_steps_worksheet)
     weeks = len(data_steps_worksheet) - 1
 
     sum_this_week = sum(weekly_steps_converted)
     avarage_this_week = int(sum_this_week / 7)
+    
     print(f"You have walked total of {sum_this_week} steps this week")
-    print(f"Your avarage daily steps this week is: {avarage_this_week}")
+    print(f"Your daily avarage is: {avarage_this_week} steps.")
 
     if weeks <= 1:
         print("Only one week of data available")
@@ -75,12 +75,15 @@ def calculations(weekly_steps_converted):
         previous_week = data_steps_worksheet[-2]
         converted_prev_week = [int(string) for string in previous_week]
         sum_prev_week = sum(converted_prev_week)
+        avg_prev_week = sum_prev_week / 7
         difference = sum_this_week - sum_prev_week
         if difference < 0:
             more_or_less = "less"
         else:
             more_or_less = "more"
-        print(f"This is {difference} {more_or_less} than the previous week\n")
+        print(f"You have walked {difference} {more_or_less} than the previous week\n")
+        print(f"Your avarage daily steps last week was: {int(avg_prev_week)}\n")
+        
     return sum_this_week
 
 
