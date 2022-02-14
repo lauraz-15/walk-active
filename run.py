@@ -15,6 +15,7 @@ SHEET = GSPREAD_CLIENT.open('WalkActive')
 
 sales = SHEET.worksheet('steps')
 
+
 def get_user_steps():
     """
     Get daily steps from the user for the past 7 days
@@ -64,7 +65,6 @@ def calculations(weekly_steps_converted):
 
     sum_this_week = sum(weekly_steps_converted)
     avarage_this_week = int(sum_this_week / 7)
-    
     print(f"You have walked total of {sum_this_week} steps this week")
     print(f"Your daily avarage is: {avarage_this_week} steps.")
 
@@ -78,12 +78,12 @@ def calculations(weekly_steps_converted):
         avg_prev_week = sum_prev_week / 7
         difference = sum_this_week - sum_prev_week
         if difference < 0:
-            more_or_less = "less"
+            compare = "less"
         else:
-            more_or_less = "more"
-        print(f"You have walked {difference} {more_or_less} than the previous week\n")
-        print(f"Your avarage daily steps last week was: {int(avg_prev_week)}\n")
-        
+            compare = "more"
+        print(f"You have walked {difference} {compare}")
+        print("than the previous week\n")
+        print(f"Your avarage daily steps last week was: {int(avg_prev_week)}")
     return sum_this_week
 
 
@@ -190,4 +190,3 @@ print("Enter data every week, and see how you improve each week.")
 print("There will also be an option to find out your BMR\n")
 print("----------------------------------------------------------")
 main()
-
