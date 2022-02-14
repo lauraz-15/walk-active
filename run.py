@@ -177,7 +177,9 @@ def main():
     current_weeks_steps = calculations(weekly_steps_converted)
     get_user_stats()
 
+print("-------------------------------------------------------------------------")
 print("Welcome to WalkActive, here you can enter last 7 days of your daily steps")
-print("Enter data every week, and see how you improve every week\n")
+print("Enter data every week, and see how you improve every week.")
 print("Once you enter your steps, you will also have an option to find out your BMR\n")
+print("-------------------------------------------------------------------------")
 main()

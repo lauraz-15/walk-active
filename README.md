@@ -5,7 +5,7 @@ WalkActive is a Python terminal programme, that is designed to perform calculati
 
 There is also an option to calculate BMR - daily calories needs based on individuals weight, height, age and gender. 
 
-programme is deployed on Heroku which allows the programme to be accessible to anyone. 
+Programme is deployed on Heroku which allows the programme to be accessible to anyone. 
 
 Please Click [here](https://walk-active.herokuapp.com/) to access this project.
 
@@ -46,7 +46,8 @@ Project was built using Gitpod
 
 **Python** was used as a programming language
 The deployed using **Heroku**.
-[**Google Drive**](https://drive.google.com/) and [**Google sheets API**](https://developers.google.com/sheets/api) was used to provide database feature.
+[**Google Drive**](https://drive.google.com/) and [**Google sheets API**](https://developers.google.com/sheets/api) 
+was connected, so data can be collected and stored on Google spreadhseet.
 
 ### Deployment
 
