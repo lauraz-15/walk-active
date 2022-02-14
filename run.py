@@ -24,7 +24,7 @@ def get_user_steps():
         print("Please enter the daily step count for the past 7 days\n")
         print("The numbers must be entered in the the following format")
         print("7 numbers seperated by commas")
-        print("Example: 100, 2000, 33, 777, 8585, 6456, 1456\n")
+        print("Example: 100,2000,33,777,8585,6456,1456\n")
 
         user_steps = input("Enter your daily steps here: \n")
 
@@ -41,11 +41,11 @@ def validate_user_entry(values):
     check if all 7 numbers are valid numbers
     """
     try:
-        [int(value) for value in values]
+        # [int(value) for value in values]
         if len(values) != 7:
             raise ValueError(f"You have entered: {len(values)}\n")
-    except ValueError as e:
-        print(f"\nInvalid data entered: {e}")
+    except ValueError as error:
+        print(f"\nInvalid data entered: {error}")
         print("Read the instructions and try again! \n")
         get_user_steps()
         return False
@@ -114,14 +114,14 @@ def get_user_stats():
             if validate_height_weight(weight):
                 break
         while True:
-            print("Please neter 'm'for a man,")
+            print("Please enter 'm' for a man,")
             gender = input("or 'w' if you are a woman: \n")
             if gender == "m" or gender == "w":
                 print("Thank you, data entered correctly!\n")
                 break
             else:
-                print("Please neter 'm'for a man,")
-                gender = input("or 'w'if you are a woman: \n")
+                print("Please enter 'm' for a man,")
+                gender = input("or 'w' if you are a woman: \n")
         calculate_bmr(height, weight, age, gender)   
     elif user_choice == "no":
         print ("No, problem. Please return next week with more step data.")
