@@ -37,11 +37,11 @@ This feature would motivate the user to monitor their daily calotie intake and a
 ### Flowchart
 
 Flowchart was used in order to plan the project and order of functions.
-Originally the idea was to calculate total calories burned per total weekly calories. However, the formula to calculate acurrate data was impossible to do, unles we would know the speed per hour. 
-Therefore for simplicity, th forumal was replaced to calculate BMPR instead as additional bonus. 
-his feature could be implement d in the future as advance feature for the users who would ahve the data available.
+Originally the idea was to calculate total calories burned per total weekly calories. However, the formula to calculate acurrate data was impossible to do, unles we would know the speed per hour for all steps teaken. most users would have different walking speeds thrughout the day depending on the activity.
+Therefore for simplicity, this was replaced to calculate BMPR instead as additional bonus. 
+However, this feature could be implemented in the future as advance feature for the users who would have the data available.
 
-
+![flowchart]https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/flow-chart.png
 
 ### Bugs
 
