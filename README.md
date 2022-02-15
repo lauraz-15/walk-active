@@ -43,8 +43,8 @@ There was a bug with user imput when capital letters were used. There loop worke
 Testing was performed to ensure that all programme runs as exected. All formulas and calculation were checked if correct. 
 Extensive testing was performed for the user input asnwers. Some errors and bigs were found(marked in yellow below), then was fixed and retested.
 
-![Mock-up](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/mock-up.png)
-![Mock-up](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/mock-up.png)
+![Testing_part_1](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/testing_part_!.png)
+![Testing_part_2](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/testing_part_2.png)
 
 ### Validator Testing
 

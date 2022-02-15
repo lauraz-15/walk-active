@@ -31,7 +31,7 @@ def get_user_steps():
         user_steps_converted = user_steps.split(",")
 
         if validate_user_entry(user_steps_converted):
-            break    
+            break
     return user_steps_converted
 
 
@@ -87,6 +87,7 @@ def calculations(weekly_steps_converted):
     ask_bmr_question()
     return sum_this_week
 
+
 def ask_bmr_question():
     """
     Find from the user if they want to find out
@@ -110,7 +111,7 @@ def get_user_stats():
             if validate_number(height):
                 break
         while True:
-            print("Please neter your weight in kg,")
+            print("Please enter your weight in kg,")
             weight = input("without a decimal point:\n")
             if validate_number(weight):
                 break
@@ -127,11 +128,11 @@ def get_user_stats():
             else:
                 print("Please enter 'm' for a man,")
                 gender = input("or 'w' if you are a woman: \n").lower()
-        calculate_bmr(height, weight, age, gender)   
+        calculate_bmr(height, weight, age, gender)
     elif user_choice == "no":
         print("No, problem. Please return next week with more step data.")
         exit()
-    else: 
+    else:
         get_user_stats()
 
 
@@ -154,7 +155,7 @@ def validate_number(string):
 
 def calculate_bmr(height, weight, age, gender):
     """
-    Calculate the BMR using different formula 
+    Calculate the BMR using different formula
     depending on the gender
     """
     weight = int(weight)
@@ -165,6 +166,11 @@ def calculate_bmr(height, weight, age, gender):
     elif gender == "w":
         bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age)
     print(f"\nYour BMR is: {int(bmr)} per day.\n")
+    print("---------------------------------------------")
+    print("Hope the data insigths were useful to you!")
+    print("We challenge you to get more steps next week!")
+    print("See you soon!")
+    print("---------------------------------------------")
 
 
 def update_steps_worksheet(values):
