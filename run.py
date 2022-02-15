@@ -41,9 +41,9 @@ def validate_user_entry(values):
     check if all 7 numbers are valid numbers
     """
     try:
-        # [int(value) for value in values]
+        [int(value) for value in values]
         if len(values) != 7:
-            raise ValueError(f"You have entered: {len(values)}\n")
+            raise ValueError(f"You have entered: {len(values)} numbers \n")
     except ValueError as error:
         print(f"\nInvalid data entered: {error}")
         print("Read the instructions and try again! \n")
@@ -84,20 +84,25 @@ def calculations(weekly_steps_converted):
         print(f"You have walked {difference} {compare}")
         print("than the previous week\n")
         print(f"Your avarage daily steps last week was: {int(avg_prev_week)}")
+    ask_bmr_question()
     return sum_this_week
 
-
-def get_user_stats():
+def ask_bmr_question():
     """
     Find from the user if they want to find out
     total calorie requirments based on their stats.
-    Get data from the use user.
     """
     print("Would you like to find out your BMR?\n")
     print("Your Basal Metabolic Rate (BMR) is the number of calories you")
     print("burn as your body performs basic (basal) life-sustaining function.")
-    print("Commonly also termed as Resting Metabolic Rate (RMR), ")
+    print("Commonly also called as Resting Metabolic Rate (RMR), ")
     print("which is the calories burned if you stayed in bed all day.\n")
+
+
+def get_user_stats():
+    """
+    Get data from the use user.
+    """
     user_choice = input("Please type 'yes' or 'no': ").lower()
     if user_choice == "yes":
         while True:
@@ -124,9 +129,10 @@ def get_user_stats():
                 gender = input("or 'w' if you are a woman: \n")
         calculate_bmr(height, weight, age, gender)   
     elif user_choice == "no":
-        print ("No, problem. Please return next week with more step data.")
+        print("No, problem. Please return next week with more step data.")
+        exit()
     else: 
-        user_choice = input("Please type 'yes' or 'no': ")
+        get_user_stats()
 
 
 def validate_height_weight(string):
