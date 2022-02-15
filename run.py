@@ -70,7 +70,7 @@ def calculations(weekly_steps_converted):
 
     if weeks <= 1:
         print("Only one week of data available")
-        print("Come back next week to compare the results")
+        print("Come back next week to compare the results.\n")
     else:
         previous_week = data_steps_worksheet[-2]
         converted_prev_week = [int(string) for string in previous_week]

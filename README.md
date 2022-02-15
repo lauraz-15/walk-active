@@ -15,21 +15,21 @@ Please Click [here](https://walk-active.herokuapp.com/) to access this project.
 
 When the program is launched user is introduced what the programme does. 
 Then user must enter the date of the last 7days of daily steps. 
-The data can be taken from any step counter app, most mobile phone will have this feature built in which allows mist users to use the programme straight away without any preparation/data collection. 
+The data can be taken from any step counter app, most mobile phone will have this feature built in which allows most users to use the programme straight away without any preparation/data collection. 
 
 
 ### Features
 
 
 Once the data is entered in the correct format, data is uploaded to the Google sheets.
-This lets the user the save weeks worth of date and compare the results with the previous weeks. 
+This lets the user the save many weeks worth of data or daily steps and compare the results with the previous weeks. 
 
-If only one weeks of data will be provided, then total steps will be calculated for that week. The total steps are calculated for that week. This encourages the user to understand the activity level and motivates to achieve more the following week.
+If there is only one weeks worth of data available, then total steps and the avarage daily steps will be calculated for that week only. This encourages the user to understand thei activity level and motivates to achieve more the in the following week.
 
 ![One-week](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/one-week.png)
 
-Extensive calculations are done if there is date available for the previous weeks. 
-Such as the the difference of total weekly steps comparing to the previous week, daily avarage this week and previous week, comparisation between the two. The results should encourage the user to get more active is the result is negative number or get even more steps if there is any improvement.
+Extensive calculations are done if there are data available for the previous weeks. 
+Such as the the difference of total weekly steps comparing to the previous week, daily avarage this week and previous week, comparisation between the two. The results should encourage the user to get more active if the result is negative number or get even more steps in if the result is positive. Just by beeing aware of the numbers, should encourage the user for healthier choices (take steps instead of lift etc.)
 
 ![more-weeks](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/more-weeks.png)
 
@@ -51,12 +51,12 @@ However, this feature could be implemented in the future as advance feature for 
 
 ### Bugs
 
-There was a bug with user imput when capital letters were used. There loop worked  prompting the user to enter the answer again, but one the an
+There was a bug with user imput when capital letters were used. There loop worked prompting the user to enter the answer again, but one the correct value was entered programme stopped running. This was fixed using lower() method and fixing the flowchart loop.
 
 ### Testing
 
 Testing was performed to ensure that all programme runs as exected. All formulas and calculation were checked if correct. 
-Extensive testing was performed for the user input asnwers. Some errors and bigs were found(marked in yellow below), then was fixed and retested.
+Extensive testing was performed for the user input asnwers. Some errors and bugs were found(marked in yellow below), then was fixed and retested to ensure code runs as expected. 
 
 ![Testing_part_1](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/testing_part_!.png)
 ![Testing_part_2](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/testing_part_2.png)
