@@ -37,6 +37,15 @@ This feature would motivate the user to monitor their daily calotie intake and a
 ### Bugs
 
 There was a bug with user imput when capital letters were used. There loop worked  prompting the user to enter the answer again, but one the an
+
+### Testing
+
+Testing was performed to ensure that all programme runs as exected. All formulas and calculation were checked if correct. 
+Extensive testing was performed for the user input asnwers. Some errors and bigs were found(marked in yellow below), then was fixed and retested.
+
+![Mock-up](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/mock-up.png)
+![Mock-up](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/mock-up.png)
+
 ### Validator Testing
 
 Code was passed through PEP8 Python Validator - no errors found.

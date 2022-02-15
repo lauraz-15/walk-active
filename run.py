@@ -115,18 +115,18 @@ def get_user_stats():
             if validate_number(weight):
                 break
         while True:
-            age = input("Enter your age\n")
+            age = input("Enter your age:\n")
             if validate_number(age):
                 break
         while True:
             print("Please enter 'm' for a man,")
-            gender = input("or 'w' if you are a woman: \n")
+            gender = input("or 'w' if you are a woman: \n").lower()
             if gender == "m" or gender == "w":
                 print("Thank you, data entered correctly!\n")
                 break
             else:
                 print("Please enter 'm' for a man,")
-                gender = input("or 'w' if you are a woman: \n")
+                gender = input("or 'w' if you are a woman: \n").lower()
         calculate_bmr(height, weight, age, gender)   
     elif user_choice == "no":
         print("No, problem. Please return next week with more step data.")
