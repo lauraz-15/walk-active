@@ -89,7 +89,8 @@ def calculations(weekly_steps_converted):
         print(f"You have walked {difference} {compare}")
         print("than the previous week\n")
         print(f"Your avarage daily steps last week was: {int(avg_prev_week)}")
-        print(f"That is {int(avg_diff)} {avg_compare} daily avarage steps than last week!\n")
+        print(f"That is {int(avg_diff)} {avg_compare} ")
+        print("daily avarage steps than last week!\n")
     ask_bmr_question()
     return sum_this_week
 
@@ -100,8 +101,8 @@ def ask_bmr_question():
     total calorie requirments based on their stats.
     """
     print("Would you like to find out your BMR?\n")
-    print("Your Basal Metabolic Rate (BMR) is the number of calories you")
-    print("burn as your body performs basic (basal) life-sustaining functions.")
+    print("Your Basal Metabolic Rate (BMR) is the number of calories you burn")
+    print(" as your body performs basic (basal) life-sustaining functions.")
     print("Commonly also called as Resting Metabolic Rate (RMR),")
     print("which is the calories burned if you stayed in bed all day.\n")
 
