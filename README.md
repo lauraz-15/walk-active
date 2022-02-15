@@ -80,3 +80,8 @@ The BMR fromulas were taken from [Diabetetes.co.uk)https://www.diabetes.co.uk/bm
 8. Search for GitHub repository and connect
 9. Wait until project is deployed and click “View” when button shows up.pip3 freeze > requirements.txt 
 10. Wait until project is deployed and click “View” when button shows up.
+
+### Credits
+
+Database set up and connection with Google sheets was inspired by Lovesandwiches project.
+The code for validate_user_entry(values) function was taken from Lovesandwiched walkthrough project.
