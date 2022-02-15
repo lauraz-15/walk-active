@@ -14,7 +14,7 @@ Please Click [here](https://walk-active.herokuapp.com/) to access this project.
 ### How to use it?
 
 When the program is launched user is introduced what the programme does. 
-Then user must enter the date of the last 7days of daily steps. 
+Then user must enter the date of the last 7 days of daily steps. 
 The data can be taken from any step counter app, most mobile phone will have this feature built in which allows most users to use the programme straight away without any preparation/data collection. 
 
 
@@ -47,7 +47,7 @@ Originally the idea was to calculate total calories burned per total weekly calo
 Therefore for simplicity, this was replaced to calculate BMPR instead as additional bonus. 
 However, this feature could be implemented in the future as advance feature for the users who would have the data available.
 
-![flowchart]https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/flow-chart.png
+![flowchart](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/flow-chart.png)
 
 ### Bugs
 
@@ -78,7 +78,7 @@ The deployed using **Heroku**.
 was connected, so data can be collected and stored on Google spreadhseet.
 [Screen Recroder](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden?hl=en) extension was used to record the screen and ezgif.com was used to cut the screen area and convert it into gif file.
 
-The BMR fromulas were taken from [Diabetetes.co.uk)https://www.diabetes.co.uk/bmr-calculator.html
+The BMR fromulas were taken from [Diabetetes.co.uk](https://www.diabetes.co.uk/bmr-calculator.html)
 
 ### Deployment
 
