@@ -26,13 +26,19 @@ This lets the user the save weeks worth of date and compare the results with the
 
 If only one weeks of data will be provided, then total steps will be calculated for that week. The total steps are calculated for that week. This encourages the user to understand the activity level and motivates to achieve more the following week.
 
+![One-week](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/one-week.png)
+
 Extensive calculations are done if there is date available for the previous weeks. 
-Such as the the difference of total weekly steps comparing to the previous week, which should encourage the user to get more active is the result is negative number or get even more steps if there is any improvement.
+Such as the the difference of total weekly steps comparing to the previous week, daily avarage this week and previous week, comparisation between the two. The results should encourage the user to get more active is the result is negative number or get even more steps if there is any improvement.
+
+![more-weeks](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/more-weeks.png)
 
 The results are then presented to the user, which should encourage the user to get more steps in the following week.
 
 After the results are presented to the user, there is an option for a user to find out their BMR(Basal Metabolic rate (total number of calories that body needs to perform basic, life-sustaining functions. The result is based on users individual stats, so as the weight changes, metabolic rate would also change therefore user can recalculate the BMR each week(assuming there are weight changes.)
 This feature would motivate the user to monitor their daily calotie intake and add extra steps if extra calories were consumed.
+
+![more-weeks](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/bmr.png)
 
 ### Flowchart
 
