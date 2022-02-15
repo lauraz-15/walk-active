@@ -89,7 +89,7 @@ def calculations(weekly_steps_converted):
         print(f"You have walked {difference} {compare}")
         print("than the previous week\n")
         print(f"Your avarage daily steps last week was: {int(avg_prev_week)}")
-        print(f"That is {int(avg_diff)} {avg_diff} daily avarage steps than last week!\n")
+        print(f"That is {int(avg_diff)} {avg_compare} daily avarage steps than last week!\n")
     ask_bmr_question()
     return sum_this_week
 
