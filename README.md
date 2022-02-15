@@ -9,7 +9,7 @@ Programme is deployed on Heroku which allows the programme to be accessible to a
 
 Please Click [here](https://walk-active.herokuapp.com/) to access this project.
 
-![Mock-up](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/mock-up.png)
+![Walk-through-gif](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/walk-active.gif)
 
 ### How to use it?
 
@@ -32,7 +32,16 @@ Such as the the difference of total weekly steps comparing to the previous week,
 The results are then presented to the user, which should encourage the user to get more steps in the following week.
 
 After the results are presented to the user, there is an option for a user to find out their BMR(Basal Metabolic rate (total number of calories that body needs to perform basic, life-sustaining functions. The result is based on users individual stats, so as the weight changes, metabolic rate would also change therefore user can recalculate the BMR each week(assuming there are weight changes.)
-This feature would motivate the user to monitor their daily calotie intake and add extra steps if extra calories were consumed. 
+This feature would motivate the user to monitor their daily calotie intake and add extra steps if extra calories were consumed.
+
+### Flowchart
+
+Flowchart was used in order to plan the project and order of functions.
+Originally the idea was to calculate total calories burned per total weekly calories. However, the formula to calculate acurrate data was impossible to do, unles we would know the speed per hour. 
+Therefore for simplicity, th forumal was replaced to calculate BMPR instead as additional bonus. 
+his feature could be implement d in the future as advance feature for the users who would ahve the data available.
+
+
 
 ### Bugs
 
