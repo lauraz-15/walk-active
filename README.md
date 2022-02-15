@@ -76,6 +76,7 @@ Project was built using **Gitpod**
 The deployed using **Heroku**.
 [**Google Drive**](https://drive.google.com/) and [**Google sheets API**](https://developers.google.com/sheets/api) 
 was connected, so data can be collected and stored on Google spreadhseet.
+[Screen Recroder](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden?hl=en) extension was used to record the screen and ezgif.com was used to cut the screen area and convert it into gif file.
 
 The BMR fromulas were taken from [Diabetetes.co.uk)https://www.diabetes.co.uk/bmr-calculator.html
 
