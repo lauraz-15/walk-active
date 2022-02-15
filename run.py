@@ -77,13 +77,19 @@ def calculations(weekly_steps_converted):
         sum_prev_week = sum(converted_prev_week)
         avg_prev_week = sum_prev_week / 7
         difference = sum_this_week - sum_prev_week
+        avg_diff = avarage_this_week - avg_prev_week
         if difference < 0:
             compare = "less"
         else:
             compare = "more"
+        if avg_diff < 0:
+            avg_compare = "less"
+        else:
+            avg_compare = "more"
         print(f"You have walked {difference} {compare}")
         print("than the previous week\n")
         print(f"Your avarage daily steps last week was: {int(avg_prev_week)}")
+        print(f"That is {int(avg_diff)} {avg_diff} daily avarage steps than last week!\n")
     ask_bmr_question()
     return sum_this_week
 
@@ -95,14 +101,14 @@ def ask_bmr_question():
     """
     print("Would you like to find out your BMR?\n")
     print("Your Basal Metabolic Rate (BMR) is the number of calories you")
-    print("burn as your body performs basic (basal) life-sustaining function.")
-    print("Commonly also called as Resting Metabolic Rate (RMR), ")
+    print("burn as your body performs basic (basal) life-sustaining functions.")
+    print("Commonly also called as Resting Metabolic Rate (RMR),")
     print("which is the calories burned if you stayed in bed all day.\n")
 
 
 def get_user_stats():
     """
-    Get data from the use user.
+    Get data from the user.
     """
     user_choice = input("Please type 'yes' or 'no': ").lower()
     if user_choice == "yes":
@@ -195,10 +201,10 @@ def main():
 
 print("---------------------------------------------------------")
 print("Welcome to WalkActive!")
-print("This tool is designed to keep you aacountable,")
+print("This tool is designed to keep you aacountable")
 print("provide feedback of your weekly activity levels")
-print("and motivate you to move more")
-print("Enter data every week, and see how you improve each week.")
+print("and motivate you to move more.")
+print("Enter data every week, and see how you improve over time.")
 print("There will also be an option to find out your BMR\n")
 print("----------------------------------------------------------")
 main()
