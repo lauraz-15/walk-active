@@ -107,16 +107,16 @@ def get_user_stats():
     if user_choice == "yes":
         while True:
             height = input("Enter your height in cm(e.g: 176):\n")
-            if validate_height_weight(height):
+            if validate_number(height):
                 break
         while True:
             print("Please neter your weight in kg,")
             weight = input("without a decimal point:\n")
-            if validate_height_weight(weight):
+            if validate_number(weight):
                 break
         while True:
             age = input("Enter your age\n")
-            if validate_height_weight(weight):
+            if validate_number(age):
                 break
         while True:
             print("Please enter 'm' for a man,")
@@ -135,7 +135,7 @@ def get_user_stats():
         get_user_stats()
 
 
-def validate_height_weight(string):
+def validate_number(string):
     """
     Validate if the data entered is a positive number
     """
