@@ -7,7 +7,7 @@ There is also an option to calculate BMR - daily calories needs based on individ
 
 Programme is deployed on Heroku which allows the programme to be accessible to anyone. 
 
-Please Click [here](https://walk-active.herokuapp.com/) to access this project.
+Please Click [here](https://walk-active.onrender.com/) to access this project.
 
 ![Walk-through-gif](https://github.com/lauraz-15/walk-active/blob/main/assets/readme_images/walk-active.gif)
 
